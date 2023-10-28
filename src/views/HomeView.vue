@@ -8,7 +8,7 @@
         </div>
       </div>
     </div>
-    <img src="@/assets/earth2.jpg" alt="" />
+    <!-- <img src="@/assets/earth2.jpg" alt="" /> -->
   </div>
 </template>
 

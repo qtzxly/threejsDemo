@@ -15,9 +15,19 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/1',
-      name: '1',
-      component: () => import('../views/1.vue')
+      path: '/three1',
+      name: 'three1',
+      component: () => import('../views/three1.vue')
+    },
+    {
+      path: '/three2',
+      name: 'three2',
+      component: () => import('../views/three2.vue')
+    },
+    {
+      path: '/three3',
+      name: 'three3',
+      component: () => import('../views/three3.vue')
     }
   ]
 })
