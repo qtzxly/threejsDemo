@@ -10,10 +10,12 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
   },
   "dependencies": {
+    "dat.gui": "^0.7.9",
+    "gsap": "^3.12.2",
     "pinia": "^2.1.7",
+    "three": "^0.143",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.5",
-    "three": "^0.143"
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.2",
@@ -21,10 +23,10 @@
     "@vitejs/plugin-vue": "^4.4.0",
     "@vue/tsconfig": "^0.4.0",
     "npm-run-all2": "^6.1.1",
-    "typescript": "~5.2.0",
-    "vite": "^4.4.11",
     "sass": "^1.58.0",
     "sass-loader": "^13.2.0",
+    "typescript": "~5.2.0",
+    "vite": "^4.4.11",
     "vue-tsc": "^1.8.19"
   }
 }
