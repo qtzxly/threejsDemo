@@ -58,6 +58,47 @@ const router = createRouter({
       path: '/three9',
       name: 'three9',
       component: () => import('../views/three9.vue')
+    },
+    // 11 - BufferGeometry  设置顶点
+    {
+      path: '/three11',
+      name: 'three11',
+      component: () => import('../views/three11.vue')
+    },
+    {
+      path: '/three12starDemo',
+      name: 'three12starDemo',
+      component: () => import('../views/three12starDemo.vue')
+    },
+    {
+      path: '/three13',
+      name: 'three13',
+      component: () => import('../views/three13.vue')
+    },
+    {
+      path: '/three14',
+      name: 'three14',
+      component: () => import('../views/three14.vue')
+    },
+    {
+      path: '/three15',
+      name: 'three15',
+      component: () => import('../views/three15.vue')
+    },
+    {
+      path: '/three16',
+      name: 'three16',
+      component: () => import('../views/three16.vue')
+    },
+    {
+      path: '/three17',
+      name: 'three17',
+      component: () => import('../views/three17.vue')
+    },
+    {
+      path: '/three18',
+      name: 'three18',
+      component: () => import('../views/three18.vue')
     }
   ]
 })

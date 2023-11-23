@@ -29,50 +29,25 @@ camera.position.set(0, 0, 10)
 scene.add(camera)
 // 添加物体
 // 创建几何体
-const cubeGeometry = new THREE.BoxGeometry(1, 1, 1)
-const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 })
-// 根据几何体和材质创建物体
-const cube = new THREE.Mesh(cubeGeometry, cubeMaterial)
-
-// 修改物体的位置
-// cube.position.set(5, 0, 0);
-// cube.position.x = 3
-
-// 将几何体添加到场景中
-scene.add(cube)
-
-const gui = new dat.GUI()
-gui
-  .add(cube.position, 'x')
-  .min(0)
-  .max(5)
-  .step(0.01)
-  .name('移动x轴')
-  .onChange((value) => {
-    console.log('值被修改：', value)
-  })
-  .onFinishChange((value) => {
-    console.log('完全停下来:', value)
-  })
-//   修改物体的颜色
-const params = {
-  color: '#ffff00',
-  fn: () => {
-    //   让立方体运动起来
-    gsap.to(cube.position, { x: 5, duration: 2, yoyo: true, repeat: -1 })
+for (let i = 0; i < 50; i++) {
+  // 每一个三角形，需要3个顶点，每个顶点需要3个值
+  const geometry = new THREE.BufferGeometry()
+  const positionArray = new Float32Array(9)
+  for (let j = 0; j < 9; j++) {
+    positionArray[j] = Math.random() * 10 - 5
   }
+  geometry.setAttribute('position', new THREE.BufferAttribute(positionArray, 3))
+  let color = new THREE.Color(Math.random(), Math.random(), Math.random())
+  const material = new THREE.MeshBasicMaterial({
+    color: color,
+    transparent: true,
+    opacity: 0.5
+  })
+  // 根据几何体和材质创建物体
+  const mesh = new THREE.Mesh(geometry, material)
+  console.log(mesh)
+  scene.add(mesh)
 }
-gui.addColor(params, 'color').onChange((value) => {
-  console.log('值被修改：', value)
-  cube.material.color.set(value)
-})
-// 设置选项框
-gui.add(cube, 'visible').name('是否显示')
-
-var folder = gui.addFolder('设置立方体')
-folder.add(cube.material, 'wireframe')
-// 设置按钮点击触发某个事件
-folder.add(params, 'fn').name('立方体运动')
 
 // 初始化渲染器
 const renderer = new THREE.WebGLRenderer()
