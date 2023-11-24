@@ -100,6 +100,26 @@ const router = createRouter({
       name: 'three18',
       component: () => import('../views/three18.vue')
     },
+    // {
+    //   path: '/three19',
+    //   name: 'three19',
+    //   component: () => import('../views/three18.vue')
+    // },
+    // {
+    //   path: '/three20',
+    //   name: 'three20',
+    //   component: () => import('../views/three18.vue')
+    // },
+    {
+      path: '/three21',
+      name: 'three21',
+      component: () => import('../views/three21.vue')
+    },
+    {
+      path: '/three21starFall',
+      name: 'three21starFall',
+      component: () => import('../views/three21starFall.vue')
+    },
     {
       path: '/three22',
       name: 'three22',
@@ -130,25 +150,20 @@ const router = createRouter({
       name: 'three27',
       component: () => import('../views/three27.vue')
     },
-    // {
-    //   path: '/three19',
-    //   name: 'three19',
-    //   component: () => import('../views/three18.vue')
-    // },
-    // {
-    //   path: '/three20',
-    //   name: 'three20',
-    //   component: () => import('../views/three18.vue')
-    // },
     {
-      path: '/three21',
-      name: 'three21',
-      component: () => import('../views/three21.vue')
+      path: '/three31',
+      name: 'three31',
+      component: () => import('../views/three31.vue')
     },
     {
-      path: '/three21starFall',
-      name: 'three21starFall',
-      component: () => import('../views/three21starFall.vue')
+      path: '/three32',
+      name: 'three32',
+      component: () => import('../views/three32.vue')
+    },
+    {
+      path: '/three33',
+      name: 'three33',
+      component: () => import('../views/three33.vue')
     }
   ]
 })
