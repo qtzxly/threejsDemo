@@ -99,6 +99,26 @@ const router = createRouter({
       path: '/three18',
       name: 'three18',
       component: () => import('../views/three18.vue')
+    },
+    // {
+    //   path: '/three19',
+    //   name: 'three19',
+    //   component: () => import('../views/three18.vue')
+    // },
+    // {
+    //   path: '/three20',
+    //   name: 'three20',
+    //   component: () => import('../views/three18.vue')
+    // },
+    {
+      path: '/three21',
+      name: 'three21',
+      component: () => import('../views/three21.vue')
+    },
+    {
+      path: '/three21test',
+      name: 'three21test',
+      component: () => import('../views/three21test.vue')
     }
   ]
 })
