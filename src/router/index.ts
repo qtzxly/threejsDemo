@@ -121,6 +121,11 @@ const router = createRouter({
       component: () => import('../views/three21starFall.vue')
     },
     {
+      path: '/three21starFall2',
+      name: 'three21starFall2',
+      component: () => import('../views/three21starFall2.vue')
+    },
+    {
       path: '/three22',
       name: 'three22',
       component: () => import('../views/three22.vue')

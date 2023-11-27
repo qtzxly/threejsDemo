@@ -8,7 +8,10 @@ import { onMounted, ref } from 'vue'
 import * as THREE from 'three'
 // 导入轨道控制器
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import texture from './particle.png'
+// import astronautModel from './astronaut.glb'
+// import astronautModel from '../../public/models/astronaut.glb'
 
 // 目标：下坠星空测试
 
