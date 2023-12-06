@@ -311,16 +311,6 @@ const initThree = () => {
     let astronaut = null,
       t = 0
 
-    // 宇航员模型
-    const loader = new GLTFLoader()
-    loader.load('/models/astronaut.glb', (mesh) => {
-      astronaut = mesh.scene
-      astronaut.material = new THREE.MeshLambertMaterial()
-      astronaut.scale.set(0.0005, 0.0005, 0.0005)
-      astronaut.position.z = -10
-      scene.add(astronaut)
-    })
-
     // 初始化粒子系统
     const geom = new THREE.BufferGeometry()
     // 材质设置
@@ -348,60 +338,13 @@ const initThree = () => {
     geom.attributes.position = vertices
     // geom.attributes.color = colors
 
-    // 材质设置
-    // let color = `hsl(60,80%,70%)`
-    // const randomColor = new THREE.Color(color)
-
-    // const material = new THREE.ShaderMaterial({
-    //   uniforms: {
-    //     uTime: {
-    //       value: 0
-    //     },
-    //     uSize: {
-    //       value: 0
-    //     },
-    //     uColor: { value: randomColor }
-    //   },
-    //   transparent: true,
-    //   // blending: THREE.AdditiveBlending,
-    //   depthWrite: false,
-    //   // vertexShader: fireworksVertex,
-    //   // fragmentShader: fireworksFragment
-
-    //   vertexShader: `
-    //     void main(){
-    //         gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4( position, 1.0 ) ;
-    //     }
-    // `,
-    //   fragmentShader: `
-    //     void main(){
-    //         gl_FragColor = vec4(1.0,0.0,0.0,1.0);
-    //     }
-    // `
-    // })
     const particleSystem = new THREE.Points(geom, material)
     scene.add(particleSystem)
 
     // // 雾化效果
     scene.fog = new THREE.FogExp2(0x000000, 0.005)
     // // 设置光照
-    // let light = new THREE.PointLight(0xffffff, 0.5)
-    // light.position.x = -50
-    // light.position.y = -50
-    // light.position.z = 75
-    // scene.add(light)
-    // light = new THREE.PointLight(0xffffff, 0.5)
-    // light.position.x = 50
-    // light.position.y = 50
-    // light.position.z = 75
-    // scene.add(light)
-    // light = new THREE.PointLight(0xffffff, 0.3)
-    // light.position.x = 25
-    // light.position.y = 50
-    // light.position.z = 200
-    // scene.add(light)
-    // light = new THREE.AmbientLight(0xffffff, 0.02)
-    // scene.add(light)
+
     // 更新粒子
     const updateParticles = () => {
       // particleSystem.position.x = 0.2 * Math.cos(t)
@@ -422,44 +365,15 @@ const initThree = () => {
       }
       particleSystem.geometry.verticesNeedUpdate = true
     }
-    const updateMeshes = () => {
-      if (astronaut) {
-        astronaut.position.z = 0.08 * Math.sin(t) + (camera.position.z - 0.2)
-        astronaut.rotation.x += 0.015
-        astronaut.rotation.y += 0.015
-        astronaut.rotation.z += 0.01
-      }
-    }
-    const updateRenderer = () => {
-      const width = canvas.clientWidth
-      const height = canvas.clientHeight
-      const needResize = canvas.width !== width || canvas.height !== height
-      if (needResize) {
-        renderer.setSize(width, height, false)
-        camera.aspect = canvas.clientWidth / canvas.clientHeight
-        camera.updateProjectionMatrix()
-      }
-    }
+
     const tick = () => {
       updateParticles()
-      // updateMeshes()
-      // updateRenderer()
+
       renderer.render(scene, camera)
       requestAnimationFrame(tick)
       // t += 0.001
     }
     tick()
-
-    window.addEventListener('mousemove', (e) => {
-      // const cx = window.innerWidth / 2
-      // const cy = window.innerHeight / 2
-      // const dx = -1 * ((cx - e.clientX) / cx)
-      // const dy = -1 * ((cy - e.clientY) / cy)
-      // camera && (camera.position.x = dx * 5)
-      // camera && (camera.position.y = dy * 5)
-      // astronaut && (astronaut.position.x = dx * 5)
-      // astronaut && (astronaut.position.y = dy * 5)
-    })
   }
   // 查看其他示例时可以注释掉该方法
   lostInSpace()
