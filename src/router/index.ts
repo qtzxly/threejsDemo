@@ -174,6 +174,21 @@ const router = createRouter({
       path: '/three41',
       name: 'three41',
       component: () => import('../views/three41.vue')
+    },
+    {
+      path: '/three71',
+      name: 'three71',
+      component: () => import('../views/three71.vue')
+    },
+    {
+      path: '/three72',
+      name: 'three72',
+      component: () => import('../views/three72.vue')
+    },
+    {
+      path: '/three73',
+      name: 'three73',
+      component: () => import('../views/three73.vue')
     }
   ]
 })
